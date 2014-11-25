@@ -15,8 +15,12 @@ except ImportError:
 
 class ScaleLatorre(Thread):
 
+    def __init__(self):
+        Thread.__init__(self)
+        self.serial = serial.Serial()
+
     def get_weight(self):
-        return '2.3'
+        return self.serial.read()
 
     def get_weight_info(self):
         return 'ok'
