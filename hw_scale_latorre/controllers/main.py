@@ -20,7 +20,7 @@ class ScaleLatorre(Thread):
         self.serial = serial.Serial()
 
     def get_weight(self):
-        return self.serial.read()
+        return self.serial.read(8)
 
     def get_weight_info(self):
         return 'ok'
